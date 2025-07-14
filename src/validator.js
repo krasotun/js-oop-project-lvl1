@@ -1,0 +1,7 @@
+import { SchemaFactory } from "./validation-schemas/schema-factory.js";
+
+export class Validator {
+  string() {
+    return SchemaFactory.factory("string");
+  }
+}
