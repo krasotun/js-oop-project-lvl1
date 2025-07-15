@@ -4,4 +4,8 @@ export class Validator {
   string() {
     return SchemaFactory.factory("string");
   }
+
+  number() {
+    return SchemaFactory.factory("number");
+  }
 }
