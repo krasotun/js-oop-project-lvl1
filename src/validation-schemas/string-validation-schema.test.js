@@ -16,7 +16,7 @@ describe("#StringValidationSchema", () => {
   });
 
   describe("#required", () => {
-    it("should add required scheme with stringRequiredValidator", () => {
+    it("should add required schema with stringRequiredValidator", () => {
       expect(stringValidationSchema.schema).toEqual({});
 
       stringValidationSchema.required();
@@ -32,7 +32,7 @@ describe("#StringValidationSchema", () => {
   });
 
   describe("#contains", () => {
-    it("should add required scheme with stringContainsValidator", () => {
+    it("should add required schema with stringContainsValidator", () => {
       expect(stringValidationSchema.schema).toEqual({});
 
       stringValidationSchema.contains("sub");
@@ -57,7 +57,7 @@ describe("#StringValidationSchema", () => {
     });
   });
   describe("#minLength", () => {
-    it("should add required scheme with minLengthContainsValidator", () => {
+    it("should add required schema with minLengthValidator", () => {
       expect(stringValidationSchema.schema).toEqual({});
 
       stringValidationSchema.minLength(25);
