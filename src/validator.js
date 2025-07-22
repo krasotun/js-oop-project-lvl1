@@ -8,4 +8,8 @@ export class Validator {
   number() {
     return SchemaFactory.factory("number");
   }
+
+  array() {
+    return SchemaFactory.factory("array");
+  }
 }

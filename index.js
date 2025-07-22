@@ -2,25 +2,17 @@ import { Validator } from "./src/validator.js";
 
 const v = new Validator();
 
-const schema = v.number();
+const schema = v.array();
 
-// console.log(schema.isValid("")); // true
-// console.log(schema.isValid(null)); // true
-// console.log(schema.isValid(undefined)); // true
+console.log(schema.isValid(null)); // true
 
-// schema.required();
+schema.required();
 
-// console.log(schema.isValid(7)); // true
-// console.log(schema.isValid(null)); // false
-// console.log(schema.isValid(undefined)); // false
-// console.log(schema.isValid("")); // false
+console.log(schema.isValid(null)); // false
+console.log(schema.isValid([])); // true
+console.log(schema.isValid(["hexlet"])); // true
 
-// schema.positive();
+schema.sizeof(2);
 
-schema.range(-5, 5);
-
-console.log(schema.isValid(4)); // true
-console.log(schema.isValid(-7)); // false
-
-// console.log(schema.minLength(10).minLength(4).isValid("Hexlet")); // true
-// console.log(schema.minLength(10).isValid("Hexlet")); // true
+console.log(schema.isValid(["hexlet"])); // false
+console.log(schema.isValid(["hexlet", "code-basics"])); // true
