@@ -1,2 +1,2 @@
 export const numberPositiveValidator = (value) =>
-  typeof value === "number" && value > 0;
+  typeof value === "number" ? value > 0 : true;

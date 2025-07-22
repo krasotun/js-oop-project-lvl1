@@ -1,10 +1,9 @@
-export const objectShapeValidator = (value) => {
+export const objectShapeValidator = (value, validators) => {
   for (const key of Object.keys(value)) {
-    const validator = value[key];
-    if (!validator.isValid(key)) {
+    const validator = validators[key];
+    if (!validator.isValid(value[key])) {
       return false;
     }
   }
-
   return true;
 };

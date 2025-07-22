@@ -12,4 +12,8 @@ export class Validator {
   array() {
     return SchemaFactory.factory("array");
   }
+
+  object() {
+    return SchemaFactory.factory("object");
+  }
 }
