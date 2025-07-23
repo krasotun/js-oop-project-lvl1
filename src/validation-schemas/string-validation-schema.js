@@ -3,7 +3,7 @@ import { stringMinLengthValidator } from '../validators/string-min-length .js';
 import { stringRequiredValidator } from '../validators/string-required.js';
 import { ValidationSchema } from './validation-schema.js';
 
-export class StringValidationSchema extends ValidationSchema {
+class StringValidationSchema extends ValidationSchema {
   required() {
     this.addValidator('required', stringRequiredValidator);
 
@@ -21,3 +21,5 @@ export class StringValidationSchema extends ValidationSchema {
     return this;
   }
 }
+
+export default StringValidationSchema;

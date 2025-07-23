@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it } from 'vitest';
 import { numberPositiveValidator } from '../validators/number-positive';
 import { numberRangeValidator } from '../validators/number-range';
 import { numberRequiredValidator } from '../validators/number-required';
-import { NumberValidationSchema } from './number-validation-schema';
+import NumberValidationSchema from './number-validation-schema';
 
 describe('#NumberValidationSchema', () => {
   let numberValidationSchema;

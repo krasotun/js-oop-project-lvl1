@@ -1,7 +1,6 @@
 import { SchemaFactory } from './validation-schemas/schema-factory.js';
 
 export class Validator {
-  // Хранит общие валидаторы для каждого типа
   commonValidators = {
     string: {},
     number: {},
@@ -11,7 +10,7 @@ export class Validator {
 
   string() {
     const schema = SchemaFactory.factory('string');
-    // Применяем все общие валидаторы для строк
+
     this.applyCommonValidators('string', schema);
     return schema;
   }
@@ -34,12 +33,10 @@ export class Validator {
     return schema;
   }
 
-  // Добавляет общий валидатор для всех схем определенного типа
   addValidator(type, name, fn) {
     this.commonValidators[type][name] = fn;
   }
 
-  // Применяет общие валидаторы к конкретной схеме
   applyCommonValidators(type, schema) {
     const validators = this.commonValidators[type];
     for (const [name, fn] of Object.entries(validators)) {

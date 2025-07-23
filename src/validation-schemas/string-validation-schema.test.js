@@ -1,4 +1,4 @@
-import { StringValidationSchema } from './string-validation-schema';
+import StringValidationSchema from './string-validation-schema';
 import { stringRequiredValidator } from '../validators/string-required';
 import { stringContainsValidator } from '../validators/string-contains';
 import { stringMinLengthValidator } from '../validators/string-min-length ';

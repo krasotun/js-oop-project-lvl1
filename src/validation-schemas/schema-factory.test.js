@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { SchemaFactory } from './schema-factory';
-import { StringValidationSchema } from './string-validation-schema';
+import StringValidationSchema from './string-validation-schema';
 
 describe('#SchemaFactory', () => {
   it('should create', () => {

@@ -3,7 +3,7 @@ import { numberRangeValidator } from '../validators/number-range.js';
 import { numberRequiredValidator } from '../validators/number-required.js';
 import { ValidationSchema } from './validation-schema.js';
 
-export class NumberValidationSchema extends ValidationSchema {
+class NumberValidationSchema extends ValidationSchema {
   required() {
     this.addValidator('required', numberRequiredValidator);
 
@@ -22,3 +22,5 @@ export class NumberValidationSchema extends ValidationSchema {
     return this;
   }
 }
+
+export default NumberValidationSchema;

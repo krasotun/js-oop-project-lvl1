@@ -1,7 +1,7 @@
-import { ArrayValidationSchema } from './array-validation-schema';
+import { beforeEach, describe, expect, it } from 'vitest';
+import ArrayValidationSchema from './array-validation-schema';
 import { arrayRequiredValidator } from '../validators/array-required';
 import { arraySizeofValidator } from '../validators/array-sizeof';
-import { beforeEach, describe, expect, it } from 'vitest';
 
 describe('#ArrayValidationSchema', () => {
   let arrayValidationSchema;
