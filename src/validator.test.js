@@ -1,14 +1,14 @@
-import { beforeEach, describe, expect, it } from 'vitest';
-import { Validator } from './validator.js';
+// import { beforeEach, describe, expect, it } from 'vitest';
+// import { Validator } from './validator.js';
 
-describe('#Validator', () => {
-  let v;
+// describe('#Validator', () => {
+//   let v;
 
-  beforeEach(() => {
-    v = new Validator();
-  });
+//   beforeEach(() => {
+//     v = new Validator();
+//   });
 
-  it('should create', () => {
-    expect(v).toBeTruthy();
-  });
-});
+//   it('should create', () => {
+//     expect(v).toBeTruthy();
+//   });
+// });

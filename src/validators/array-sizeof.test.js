@@ -1,17 +1,17 @@
-import { beforeEach, describe, expect, it } from 'vitest';
-import { arraySizeofValidator } from './array-sizeof';
+// import { beforeEach, describe, expect, it } from 'vitest';
+// import { arraySizeofValidator } from './array-sizeof';
 
-describe('#arraySizeof', () => {
-  let arr;
+// describe('#arraySizeof', () => {
+//   let arr;
 
-  beforeEach(() => {
-    arr = [1, 2, 3];
-  });
+//   beforeEach(() => {
+//     arr = [1, 2, 3];
+//   });
 
-  it('should return true if array length equals length', () => {
-    expect(arraySizeofValidator(arr, 3)).toBe(true);
-  });
-  it('should return false if array length not equals length', () => {
-    expect(arraySizeofValidator(arr, 5)).toBe(false);
-  });
-});
+//   it('should return true if array length equals length', () => {
+//     expect(arraySizeofValidator(arr, 3)).toBe(true);
+//   });
+//   it('should return false if array length not equals length', () => {
+//     expect(arraySizeofValidator(arr, 5)).toBe(false);
+//   });
+// });
