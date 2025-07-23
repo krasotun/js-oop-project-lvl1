@@ -18,7 +18,6 @@ export class StringValidationSchema extends ValidationSchema {
 
   minLength(minLength) {
     this.addValidator("minLength", stringMinLengthValidator, minLength);
-
     return this;
   }
 }
