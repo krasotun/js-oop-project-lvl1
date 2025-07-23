@@ -4,6 +4,21 @@ export default Validator;
 
 // const v = new Validator();
 
+// const fn = (value, start) => value.startsWith(start);
+
+// v.addValidator("string", "startWith", fn);
+
+// const schema = v.string().test("startWith", "H");
+
+// console.log(schema.isValid("exlet")); // false
+// console.log(schema.isValid("Hexlet")); // true
+
+// // const schema = v.string().test("startWith", "H");
+// // console.log(schema.isValid("exlet")); // false
+// // console.log(schema.isValid("Hexlet"));
+
+// // const v = new Validator();
+
 // const schema = v.string();
 
 // const schema1 = v.number();
@@ -11,12 +26,9 @@ export default Validator;
 
 // console.log(schema.isValid(null)); // true
 
-// schema1.required();
+// schema.required();
 
-// console.log(schema1.validators);
-// console.log(schema2.validators);
-
-// // console.log(schema.isValid(null)); // false
+// console.log(schema.isValid(null)); // false
 // console.log(schema1.isValid(7)); // true
 // console.log(schema2.isValid(7)); // true
 
