@@ -1,6 +1,6 @@
 import { SchemaFactory } from './validation-schemas/schema-factory.js';
 
- class Validator {
+class Validator {
   constructor() {
     this.commonValidators = {
       string: {},
