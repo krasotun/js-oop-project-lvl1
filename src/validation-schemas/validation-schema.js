@@ -1,5 +1,7 @@
 export class ValidationSchema {
-  validators = {};
+  constructor() {
+    this.validators = {};
+  }
 
   isValid(value) {
     return Object.values(this.validators).every(({ validator, params }) =>

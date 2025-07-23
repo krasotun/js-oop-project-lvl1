@@ -1,12 +1,14 @@
 import { SchemaFactory } from './validation-schemas/schema-factory.js';
 
 export class Validator {
-  commonValidators = {
-    string: {},
-    number: {},
-    array: {},
-    object: {},
-  };
+  constructor() {
+    this.commonValidators = {
+      string: {},
+      number: {},
+      array: {},
+      object: {},
+    };
+  }
 
   string() {
     const schema = SchemaFactory.factory('string');

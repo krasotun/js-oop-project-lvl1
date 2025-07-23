@@ -1,1 +1,3 @@
-export const arrayRequiredValidator = (value) => Array.isArray(value);
+const arrayRequiredValidator = (value) => Array.isArray(value);
+
+export default arrayRequiredValidator;

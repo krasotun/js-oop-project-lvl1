@@ -1,1 +1,2 @@
-export const arraySizeofValidator = (value, length) => value.length === length;
+const arraySizeofValidator = (value, length) => value.length === length;
+export default arraySizeofValidator;
