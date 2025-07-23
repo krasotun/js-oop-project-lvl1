@@ -2,7 +2,7 @@ import { arrayRequiredValidator } from '../validators/array-required.js';
 import { arraySizeofValidator } from '../validators/array-sizeof.js';
 import { ValidationSchema } from './validation-schema.js';
 
-export class ArrayValidationSchema extends ValidationSchema {
+class ArrayValidationSchema extends ValidationSchema {
   required() {
     this.addValidator('required', arrayRequiredValidator);
 
@@ -15,3 +15,4 @@ export class ArrayValidationSchema extends ValidationSchema {
     return this;
   }
 }
+export default ArrayValidationSchema;
