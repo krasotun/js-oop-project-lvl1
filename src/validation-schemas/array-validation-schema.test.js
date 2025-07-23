@@ -5,7 +5,6 @@ import { arraySizeofValidator } from '../validators/array-sizeof';
 
 describe('#ArrayValidationSchema', () => {
   let arrayValidationSchema;
-
   beforeEach(() => {
     arrayValidationSchema = new ArrayValidationSchema();
   });
@@ -41,7 +40,6 @@ describe('#ArrayValidationSchema', () => {
         contains: arraySizeofValidator,
       });
     });
-
     it('should save constraints', () => {
       expect(arrayValidationSchema.schema).toEqual({});
 
