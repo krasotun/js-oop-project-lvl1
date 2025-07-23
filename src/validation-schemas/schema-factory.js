@@ -1,7 +1,7 @@
-import { NumberValidationSchema } from "./number-validation-schema.js";
-import { StringValidationSchema } from "./string-validation-schema.js";
-import { ArrayValidationSchema } from "./array-validation-schema.js";
-import { ObjectValidationSchema } from "./object-validation-schema.js";
+import { NumberValidationSchema } from './number-validation-schema.js';
+import { StringValidationSchema } from './string-validation-schema.js';
+import { ArrayValidationSchema } from './array-validation-schema.js';
+import { ObjectValidationSchema } from './object-validation-schema.js';
 
 export const mapping = {
   string: StringValidationSchema,
@@ -15,7 +15,7 @@ export class SchemaFactory {
     const schemaToCreate = mapping[schema];
 
     if (!schemaToCreate) {
-      throw new Error("Schema not implemented");
+      throw new Error('Schema not implemented');
     }
 
     return new schemaToCreate();

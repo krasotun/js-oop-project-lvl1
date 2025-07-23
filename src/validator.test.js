@@ -1,14 +1,14 @@
-import { Validator } from "./validator.js";
-import { beforeEach, describe, it, expect } from "@jest/globals";
+import { beforeEach, describe, expect, it } from 'vitest';
+import { Validator } from './validator.js';
 
-describe("#Validator", () => {
+describe('#Validator', () => {
   let v;
 
   beforeEach(() => {
     v = new Validator();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(v).toBeTruthy();
   });
 });

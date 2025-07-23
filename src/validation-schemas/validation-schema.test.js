@@ -1,20 +1,20 @@
-import { beforeEach, describe, expect, it } from "@jest/globals";
-import { ValidationSchema } from "./validation-schema";
+import { beforeEach, describe, expect, it } from 'vitest';
+import { ValidationSchema } from './validation-schema';
 
-describe("#ValidationSchema", () => {
+describe('#ValidationSchema', () => {
   let validationSchema;
 
   beforeEach(() => {
     validationSchema = new ValidationSchema();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(validationSchema).toBeTruthy();
   });
 
-  describe("#addValidator", () => {
-    it("should add new validator with default params", () => {
-      const mockName = "mockName";
+  describe('#addValidator', () => {
+    it('should add new validator with default params', () => {
+      const mockName = 'mockName';
       const mockValidator = () => {};
 
       validationSchema.addValidator(mockName, mockValidator);
@@ -24,8 +24,8 @@ describe("#ValidationSchema", () => {
       });
     });
 
-    it("should update existing validator", () => {
-      const mockName = "mockName";
+    it('should update existing validator', () => {
+      const mockName = 'mockName';
       const mockValidator = () => {};
 
       ValidationSchema.validators = {

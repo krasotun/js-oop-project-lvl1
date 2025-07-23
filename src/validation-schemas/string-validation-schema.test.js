@@ -1,22 +1,22 @@
-import { beforeEach, describe, expect, it } from "@jest/globals";
-import { StringValidationSchema } from "./string-validation-schema";
-import { stringRequiredValidator } from "../validators/string-required";
-import { stringContainsValidator } from "../validators/string-contains";
-import { stringMinLengthValidator } from "../validators/string-min-length ";
+import { StringValidationSchema } from './string-validation-schema';
+import { stringRequiredValidator } from '../validators/string-required';
+import { stringContainsValidator } from '../validators/string-contains';
+import { stringMinLengthValidator } from '../validators/string-min-length ';
+import { beforeEach, describe, expect, it } from 'vitest';
 
-describe("#StringValidationSchema", () => {
+describe('#StringValidationSchema', () => {
   let stringValidationSchema;
 
   beforeEach(() => {
     stringValidationSchema = new StringValidationSchema();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(stringValidationSchema).toBeTruthy();
   });
 
-  describe("#required", () => {
-    it("should add required schema with stringRequiredValidator", () => {
+  describe('#required', () => {
+    it('should add required schema with stringRequiredValidator', () => {
       expect(stringValidationSchema.schema).toEqual({});
 
       stringValidationSchema.required();
@@ -25,39 +25,39 @@ describe("#StringValidationSchema", () => {
         required: stringRequiredValidator,
       });
     });
-    it("should return schema", () => {
+    it('should return schema', () => {
       const schema = stringValidationSchema.required();
       expect(schema).toBeInstanceOf(StringValidationSchema);
     });
   });
 
-  describe("#contains", () => {
-    it("should add required schema with stringContainsValidator", () => {
+  describe('#contains', () => {
+    it('should add required schema with stringContainsValidator', () => {
       expect(stringValidationSchema.schema).toEqual({});
 
-      stringValidationSchema.contains("sub");
+      stringValidationSchema.contains('sub');
 
       expect(stringValidationSchema.schema).toEqual({
         contains: stringContainsValidator,
       });
     });
-    it("should save constraints", () => {
+    it('should save constraints', () => {
       expect(stringValidationSchema.schema).toEqual({});
 
-      stringValidationSchema.contains("sub");
+      stringValidationSchema.contains('sub');
 
       expect(stringValidationSchema.constraints).toEqual({
-        contains: "sub",
+        contains: 'sub',
       });
     });
 
-    it("should return schema", () => {
-      const schema = stringValidationSchema.contains("sub");
+    it('should return schema', () => {
+      const schema = stringValidationSchema.contains('sub');
       expect(schema).toBeInstanceOf(StringValidationSchema);
     });
   });
-  describe("#minLength", () => {
-    it("should add required schema with minLengthValidator", () => {
+  describe('#minLength', () => {
+    it('should add required schema with minLengthValidator', () => {
       expect(stringValidationSchema.schema).toEqual({});
 
       stringValidationSchema.minLength(25);
@@ -66,7 +66,7 @@ describe("#StringValidationSchema", () => {
         minLength: stringMinLengthValidator,
       });
     });
-    it("should save constraints", () => {
+    it('should save constraints', () => {
       expect(stringValidationSchema.schema).toEqual({});
 
       stringValidationSchema.minLength(25);
@@ -76,7 +76,7 @@ describe("#StringValidationSchema", () => {
       });
     });
 
-    it("should return schema", () => {
+    it('should return schema', () => {
       const schema = stringValidationSchema.minLength(25);
       expect(schema).toBeInstanceOf(StringValidationSchema);
     });

@@ -1,4 +1,4 @@
-import { SchemaFactory } from "./validation-schemas/schema-factory.js";
+import { SchemaFactory } from './validation-schemas/schema-factory.js';
 
 export class Validator {
   // Хранит общие валидаторы для каждого типа
@@ -10,27 +10,27 @@ export class Validator {
   };
 
   string() {
-    const schema = SchemaFactory.factory("string");
+    const schema = SchemaFactory.factory('string');
     // Применяем все общие валидаторы для строк
-    this.applyCommonValidators("string", schema);
+    this.applyCommonValidators('string', schema);
     return schema;
   }
 
   number() {
-    const schema = SchemaFactory.factory("number");
-    this.applyCommonValidators("number", schema);
+    const schema = SchemaFactory.factory('number');
+    this.applyCommonValidators('number', schema);
     return schema;
   }
 
   array() {
-    const schema = SchemaFactory.factory("array");
-    this.applyCommonValidators("array", schema);
+    const schema = SchemaFactory.factory('array');
+    this.applyCommonValidators('array', schema);
     return schema;
   }
 
   object() {
-    const schema = SchemaFactory.factory("object");
-    this.applyCommonValidators("object", schema);
+    const schema = SchemaFactory.factory('object');
+    this.applyCommonValidators('object', schema);
     return schema;
   }
 

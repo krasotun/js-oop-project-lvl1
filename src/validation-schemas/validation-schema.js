@@ -7,7 +7,6 @@ export class ValidationSchema {
     );
   }
 
-  // Переименовал для ясности (было addSchema)
   addValidator(name, validator, params = true) {
     this.validators[name] = { validator, params };
   }

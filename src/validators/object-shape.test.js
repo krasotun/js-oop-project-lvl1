@@ -1,7 +1,7 @@
-import { beforeEach, describe, expect, it, jest } from "@jest/globals";
-import { objectShapeValidator } from "./object-shape";
+import { beforeEach, describe, expect, it } from 'vitest';
+import { objectShapeValidator } from './object-shape';
 
-describe("#objectShape", () => {
+describe('#objectShape', () => {
   let validators;
 
   const validSchemaMock = {
@@ -15,7 +15,7 @@ describe("#objectShape", () => {
     validators = {};
   });
 
-  it("should return true if all keys are valid", () => {
+  it('should return true if all keys are valid', () => {
     validators = {
       one: validSchemaMock,
       two: validSchemaMock,
@@ -24,7 +24,7 @@ describe("#objectShape", () => {
     expect(objectShapeValidator(validators)).toBe(true);
   });
 
-  it("should return false if some keys are not valid", () => {
+  it('should return false if some keys are not valid', () => {
     validators = {
       one: validSchemaMock,
       two: notValidSchemaMock,
@@ -33,7 +33,7 @@ describe("#objectShape", () => {
     expect(objectShapeValidator(validators)).toBe(false);
   });
 
-  it("shouuld call isValid for each key with correct argument", () => {
+  it('shouuld call isValid for each key with correct argument', () => {
     const mockValidator = {
       isValid: jest.fn((key) => true),
     };
@@ -45,8 +45,8 @@ describe("#objectShape", () => {
 
     objectShapeValidator(validators);
 
-    expect(mockValidator.isValid).toHaveBeenCalledWith("one");
-    expect(mockValidator.isValid).toHaveBeenCalledWith("two");
+    expect(mockValidator.isValid).toHaveBeenCalledWith('one');
+    expect(mockValidator.isValid).toHaveBeenCalledWith('two');
 
     expect(mockValidator.isValid).toHaveBeenCalledTimes(2);
   });

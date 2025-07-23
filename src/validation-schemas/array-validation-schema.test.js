@@ -1,21 +1,21 @@
-import { beforeEach, describe, expect, it } from "@jest/globals";
-import { ArrayValidationSchema } from "./array-validation-schema";
-import { arrayRequiredValidator } from "../validators/array-required";
-import { arraySizeofValidator } from "../validators/array-sizeof";
+import { ArrayValidationSchema } from './array-validation-schema';
+import { arrayRequiredValidator } from '../validators/array-required';
+import { arraySizeofValidator } from '../validators/array-sizeof';
+import { beforeEach, describe, expect, it } from 'vitest';
 
-describe("#ArrayValidationSchema", () => {
+describe('#ArrayValidationSchema', () => {
   let arrayValidationSchema;
 
   beforeEach(() => {
     arrayValidationSchema = new ArrayValidationSchema();
   });
 
-  it("should create", () => {
+  it('should create', () => {
     expect(arrayValidationSchema).toBeTruthy();
   });
 
-  describe("#required", () => {
-    it("should add required schema with arrayRequiredValidator", () => {
+  describe('#required', () => {
+    it('should add required schema with arrayRequiredValidator', () => {
       expect(arrayValidationSchema.schema).toEqual({});
 
       arrayValidationSchema.required();
@@ -25,14 +25,14 @@ describe("#ArrayValidationSchema", () => {
       });
     });
 
-    it("should return schema", () => {
+    it('should return schema', () => {
       const schema = arrayValidationSchema.required();
       expect(schema).toBeInstanceOf(ArrayValidationSchema);
     });
   });
 
-  describe("#sizeof", () => {
-    it("should add sizeof schema with arraySizeofValidator", () => {
+  describe('#sizeof', () => {
+    it('should add sizeof schema with arraySizeofValidator', () => {
       expect(arrayValidationSchema.schema).toEqual({});
 
       arrayValidationSchema.sizeof(2);
@@ -42,7 +42,7 @@ describe("#ArrayValidationSchema", () => {
       });
     });
 
-    it("should save constraints", () => {
+    it('should save constraints', () => {
       expect(arrayValidationSchema.schema).toEqual({});
 
       arrayValidationSchema.sizeof(2);
@@ -52,7 +52,7 @@ describe("#ArrayValidationSchema", () => {
       });
     });
 
-    it("should return schema", () => {
+    it('should return schema', () => {
       const schema = arrayValidationSchema.sizeof(2);
       expect(schema).toBeInstanceOf(ArrayValidationSchema);
     });

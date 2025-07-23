@@ -1,19 +1,19 @@
-import { beforeEach, describe, expect, it } from "@jest/globals";
-import { stringContainsValidator } from "./string-contains";
+import { beforeEach, describe, expect, it } from 'vitest';
+import { stringContainsValidator } from './string-contains';
 
-describe("#stringContains", () => {
+describe('#stringContains', () => {
   let str;
 
   beforeEach(() => {
-    str = "str-with-sub";
+    str = 'str-with-sub';
   });
 
-  it("should return true if string contains substring", () => {
-    const sub = "sub";
+  it('should return true if string contains substring', () => {
+    const sub = 'sub';
     expect(stringContainsValidator(str, sub)).toBe(true);
   });
-  it("should return false if string not contains substring", () => {
-    const sub = "substr";
+  it('should return false if string not contains substring', () => {
+    const sub = 'substr';
     expect(stringContainsValidator(str, sub)).toBe(false);
   });
 });
