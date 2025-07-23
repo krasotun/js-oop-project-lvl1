@@ -1,6 +1,6 @@
 import { SchemaFactory } from './validation-schemas/schema-factory.js';
 
-export class Validator {
+ class Validator {
   constructor() {
     this.commonValidators = {
       string: {},
@@ -46,3 +46,5 @@ export class Validator {
     }
   }
 }
+
+export default Validator;
