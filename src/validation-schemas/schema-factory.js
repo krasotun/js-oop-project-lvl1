@@ -3,7 +3,7 @@ import { StringValidationSchema } from "./string-validation-schema.js";
 import { ArrayValidationSchema } from "./array-validation-schema.js";
 import { ObjectValidationSchema } from "./object-validation-schema.js";
 
-const mapping = {
+export const mapping = {
   string: StringValidationSchema,
   number: NumberValidationSchema,
   array: ArrayValidationSchema,

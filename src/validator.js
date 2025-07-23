@@ -1,4 +1,4 @@
-import { SchemaFactory } from "./validation-schemas/schema-factory.js";
+import { mapping, SchemaFactory } from "./validation-schemas/schema-factory.js";
 
 export class Validator {
   string() {
@@ -15,5 +15,20 @@ export class Validator {
 
   object() {
     return SchemaFactory.factory("object");
+  }
+
+  addValidator(type, name, fn) {
+    const SchemaClass = mapping[type];
+
+    if (!SchemaClass) {
+      throw new Error(`Schema type ${type} not found`);
+    }
+
+    SchemaClass.validators = {
+      ...SchemaClass.validators,
+      [name]: {
+        validator: fn,
+      },
+    };
   }
 }

@@ -20,4 +20,10 @@ export class ValidationSchema {
       params,
     };
   }
+
+  test(name, params) {
+    console.log(this.constructor.validators);
+    this.constructor.validators[name].params = params;
+    return this;
+  }
 }
