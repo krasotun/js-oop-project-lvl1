@@ -3,7 +3,7 @@ export class ValidationSchema {
 
   isValid(value) {
     const validators = Object.values(this.constructor.validators);
-
+    console.log(validators);
     for (const validator of validators) {
       if (!validator.validator(value, validator.params)) {
         return false;
@@ -14,7 +14,6 @@ export class ValidationSchema {
   }
 
   addValidator(name, validator, params = true) {
-    this.constructor.validators = {};
     this.constructor.validators[name] = {
       validator,
       params,

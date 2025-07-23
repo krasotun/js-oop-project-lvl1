@@ -4,7 +4,21 @@ export default Validator;
 
 // const v = new Validator();
 
-// const schema = v.string();
+// const schema = v.number();
+
+// console.log(schema.isValid(null)); // true
+
+// schema.required();
+
+// console.log(schema.isValid(null)); // false
+// console.log(schema.isValid(7)); // true
+
+// console.log(schema.positive().isValid(10)); // true
+
+// schema.range(-5, 5);
+
+// console.log(schema.isValid(-3)); // false
+// console.log(schema.isValid(5)); // true
 
 // console.log(schema.isValid("")); // true
 // console.log(schema.isValid(null)); // true
