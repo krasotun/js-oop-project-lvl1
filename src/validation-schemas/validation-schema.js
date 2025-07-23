@@ -14,6 +14,7 @@ export class ValidationSchema {
   }
 
   addValidator(name, validator, params = true) {
+    this.constructor.validators = {};
     this.constructor.validators[name] = {
       validator,
       params,
