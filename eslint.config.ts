@@ -25,8 +25,6 @@ export default [
     },
     rules: {
       "@typescript-eslint/no-unused-vars": "off",
-      semi: ["error", "never"],
-      "no-extra-semi": "error",
     },
   },
 ]; // satisfies Linter.Config[]
