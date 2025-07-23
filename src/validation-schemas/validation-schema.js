@@ -6,7 +6,7 @@ class ValidationSchema {
   isValid(value) {
     return Object.values(this.validators)
       .every(
-        ({ validator, params } ) => validator(value, params)
+        ({ validator, params }) => validator(value, params)
       );
   }
 
