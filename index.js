@@ -4,14 +4,21 @@ export default Validator;
 
 // const v = new Validator();
 
-// const schema = v.number();
+// const schema = v.string();
+
+// const schema1 = v.number();
+// const schema2 = v.number();
 
 // console.log(schema.isValid(null)); // true
 
-// schema.required();
+// schema1.required();
 
-// console.log(schema.isValid(null)); // false
-// console.log(schema.isValid(7)); // true
+// console.log(schema1.validators);
+// console.log(schema2.validators);
+
+// // console.log(schema.isValid(null)); // false
+// console.log(schema1.isValid(7)); // true
+// console.log(schema2.isValid(7)); // true
 
 // console.log(schema.positive().isValid(10)); // true
 

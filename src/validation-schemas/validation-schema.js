@@ -1,9 +1,8 @@
 export class ValidationSchema {
-  static validators = {};
+  validators = {};
 
   isValid(value) {
-    const validators = Object.values(this.constructor.validators);
-    console.log(validators);
+    const validators = Object.values(this.validators);
     for (const validator of validators) {
       if (!validator.validator(value, validator.params)) {
         return false;
@@ -14,14 +13,14 @@ export class ValidationSchema {
   }
 
   addValidator(name, validator, params = true) {
-    this.constructor.validators[name] = {
+    this.validators[name] = {
       validator,
       params,
     };
   }
 
   test(name, params) {
-    this.constructor.validators[name].params = params;
+    this.validators[name].params = params;
     return this;
   }
 }
