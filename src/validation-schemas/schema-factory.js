@@ -18,6 +18,6 @@ export class SchemaFactory {
       throw new Error("Schema not implemented");
     }
 
-    return new mapping[schema]();
+    return new schemaToCreate();
   }
 }

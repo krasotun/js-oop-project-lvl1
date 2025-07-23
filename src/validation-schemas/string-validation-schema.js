@@ -5,19 +5,19 @@ import { ValidationSchema } from "./validation-schema.js";
 
 export class StringValidationSchema extends ValidationSchema {
   required() {
-    this.addToSchema("required", stringRequiredValidator);
+    this.addValidator("required", stringRequiredValidator);
 
     return this;
   }
 
   contains(subString) {
-    this.addToSchema("contains", stringContainsValidator, subString);
+    this.addValidator("contains", stringContainsValidator, subString);
 
     return this;
   }
 
   minLength(minLength) {
-    this.addToSchema("minLength", stringMinLengthValidator, minLength);
+    this.addValidator("minLength", stringMinLengthValidator, minLength);
 
     return this;
   }

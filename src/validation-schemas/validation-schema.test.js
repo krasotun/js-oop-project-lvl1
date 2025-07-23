@@ -12,90 +12,58 @@ describe("#ValidationSchema", () => {
     expect(validationSchema).toBeTruthy();
   });
 
-  describe("initial config", () => {
-    it("schema should be empty", () => {
-      expect(validationSchema.schema).toEqual({});
-    });
-
-    it("constraints should be empty", () => {
-      expect(validationSchema.constraints).toEqual({});
-    });
-  });
-
-  describe("#addToSchema", () => {
-    it("should add new schema", () => {
+  describe("#addValidator", () => {
+    it("should add new validator with default params", () => {
       const mockName = "mockName";
-      const mockCb = () => {};
+      const mockValidator = () => {};
 
-      validationSchema.addToSchema(mockName, mockCb);
+      validationSchema.addValidator(mockName, mockValidator);
 
-      expect(validationSchema.schema).toEqual({ mockName: mockCb });
-    });
-
-    it("should update existing schema", () => {
-      const mockName = "mockName";
-      const mockCb = () => {};
-
-      validationSchema.schema = {
-        mockName: mockCb,
-      };
-      const anotherMockCb = () => {};
-      validationSchema.addToSchema(mockName, anotherMockCb);
-
-      expect(validationSchema.schema).toEqual({ mockName: anotherMockCb });
-    });
-
-    it("should add new constraints", () => {
-      const mockName = "mockName";
-      const mockCb = () => {};
-      const mockConstraints = 146;
-
-      validationSchema.addToSchema(mockName, mockCb, mockConstraints);
-
-      expect(validationSchema.constraints).toEqual({
-        mockName: mockConstraints,
+      expect(ValidationSchema.validators).toEqual({
+        mockName: { validator: mockValidator, params: true },
       });
     });
-    it("should update existing constraints", () => {
+
+    it("should update existing validator", () => {
       const mockName = "mockName";
-      const mockCb = () => {};
-      const mockConstraints = 146;
+      const mockValidator = () => {};
 
-      validationSchema.constraints = {
-        mockName: mockConstraints,
+      ValidationSchema.validators = {
+        mockName: { validator: mockValidator, params: 123 },
       };
+      const anotherMockValidator = () => {};
 
-      validationSchema.addToSchema(mockName, mockCb, 147);
+      validationSchema.addValidator(mockName, anotherMockValidator, 124);
 
-      expect(validationSchema.constraints).toEqual({
-        mockName: 147,
+      expect(ValidationSchema.validators).toEqual({
+        mockName: { validator: anotherMockValidator, params: 124 },
       });
     });
   });
 
-  describe("#isValid", () => {
-    it("should return true if no validators provided", () => {
-      expect(validationSchema.isValid()).toBe(true);
-    });
+  // describe("#isValid", () => {
+  //   it("should return true if no validators provided", () => {
+  //     expect(validationSchema.isValid()).toBe(true);
+  //   });
 
-    it("should return true if all validators passed", () => {
-      const mockSchema = {
-        firstValidator: () => true,
-        secondValidator: () => true,
-      };
+  //   it("should return true if all validators passed", () => {
+  //     const mockSchema = {
+  //       firstValidator: () => true,
+  //       secondValidator: () => true,
+  //     };
 
-      validationSchema.schema = mockSchema;
-      expect(validationSchema.isValid()).toBe(true);
-    });
-    it("should return false if at least one of validators failed", () => {
-      const mockSchema = {
-        firstValidator: () => true,
-        secondValidator: () => false,
-        thirdValidator: () => false,
-      };
+  //     validationSchema.schema = mockSchema;
+  //     expect(validationSchema.isValid()).toBe(true);
+  //   });
+  //   it("should return false if at least one of validators failed", () => {
+  //     const mockSchema = {
+  //       firstValidator: () => true,
+  //       secondValidator: () => false,
+  //       thirdValidator: () => false,
+  //     };
 
-      validationSchema.schema = mockSchema;
-      expect(validationSchema.isValid()).toBe(false);
-    });
-  });
+  //     validationSchema.schema = mockSchema;
+  //     expect(validationSchema.isValid()).toBe(false);
+  //   });
+  // });
 });

@@ -5,19 +5,19 @@ import { ValidationSchema } from "./validation-schema.js";
 
 export class NumberValidationSchema extends ValidationSchema {
   required() {
-    this.addToSchema("required", numberRequiredValidator);
+    this.addValidator("required", numberRequiredValidator);
 
     return this;
   }
 
   positive() {
-    this.addToSchema("positive", numberPositiveValidator);
+    this.addValidator("positive", numberPositiveValidator);
 
     return this;
   }
 
   range(min, max) {
-    this.addToSchema("range", numberRangeValidator, { min, max });
+    this.addValidator("range", numberRangeValidator, { min, max });
 
     return this;
   }

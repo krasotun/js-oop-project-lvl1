@@ -1,23 +1,23 @@
 export class ValidationSchema {
-  schema = {};
-  constraints = {};
-
-  addToSchema(name, cb, value) {
-    this.schema[name] = cb;
-
-    this.constraints[name] = value;
-  }
+  static validators = {};
 
   isValid(value) {
-    const validators = Object.entries(this.schema);
+    const validators = Object.values(this.constructor.validators);
 
-    for (const [name, cb] of validators) {
-      const constraint = this.constraints[name];
-      if (!cb(value, constraint)) {
+    for (const validator of validators) {
+      if (!validator.validator(value, validator.params)) {
         return false;
       }
     }
 
+    console.log(this.constructor.validators);
     return true;
+  }
+
+  addValidator(name, validator, params = true) {
+    this.constructor.validators[name] = {
+      validator,
+      params,
+    };
   }
 }

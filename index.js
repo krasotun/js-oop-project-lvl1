@@ -2,15 +2,18 @@ import { Validator } from "./src/validator.js";
 
 const v = new Validator();
 
-const schema = v.object();
+const schema = v.string();
 
-// Позволяет описывать валидацию для свойств объекта
-schema.shape({
-  name: v.string().required(),
-  age: v.number().positive(),
-});
+console.log(schema.isValid("")); // true
+console.log(schema.isValid(null)); // true
+console.log(schema.isValid(undefined)); // true
 
-console.log(schema.isValid({ name: "kolya", age: 100 })); // true
-console.log(schema.isValid({ name: "maya", age: null })); // true
-console.log(schema.isValid({ name: "", age: null })); // false
-console.log(schema.isValid({ name: "ada", age: -5 })); // false
+schema.required();
+
+console.log(schema.isValid("what does the fox say")); // true
+console.log(schema.isValid("hexlet")); // true
+console.log(schema.isValid(null)); // false
+console.log(schema.isValid("")); //) false
+
+console.log(schema.contains("what").isValid("what does the fox say")); // true
+console.log(schema.contains("whatthe").isValid("what does the fox say")); // false

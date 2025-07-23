@@ -3,7 +3,7 @@ import { ValidationSchema } from "./validation-schema.js";
 
 export class ObjectValidationSchema extends ValidationSchema {
   shape(validators) {
-    this.addToSchema("shape", objectShapeValidator, validators);
+    this.addValidator("shape", objectShapeValidator, validators);
 
     return this;
   }
