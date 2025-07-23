@@ -2,7 +2,9 @@ import { Validator } from './src/validator.js';
 
 export default Validator;
 
-// const v = new Validator();
+const v = new Validator();
+
+const schema = v.array();
 
 // const fn = (value, start) => value.startsWith(start);
 

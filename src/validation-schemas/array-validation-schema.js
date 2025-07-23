@@ -15,4 +15,5 @@ class ArrayValidationSchema extends ValidationSchema {
     return this;
   }
 }
+
 export default ArrayValidationSchema;
