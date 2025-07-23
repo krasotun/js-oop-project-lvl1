@@ -1,7 +1,7 @@
 import numberPositiveValidator from '../validators/number-positive.js';
 import { numberRangeValidator } from '../validators/number-range.js';
 import { numberRequiredValidator } from '../validators/number-required.js';
-import { ValidationSchema } from './validation-schema.js';
+import ValidationSchema from './validation-schema.js';
 
 class NumberValidationSchema extends ValidationSchema {
   required() {

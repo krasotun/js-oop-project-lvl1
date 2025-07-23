@@ -1,4 +1,4 @@
-export class ValidationSchema {
+class ValidationSchema {
   constructor() {
     this.validators = {};
   }
@@ -21,3 +21,5 @@ export class ValidationSchema {
     return this;
   }
 }
+
+export default ValidationSchema;

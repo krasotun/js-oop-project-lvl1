@@ -1,7 +1,7 @@
 import { stringContainsValidator } from '../validators/string-contains.js';
 import { stringMinLengthValidator } from '../validators/string-min-length .js';
 import { stringRequiredValidator } from '../validators/string-required.js';
-import { ValidationSchema } from './validation-schema.js';
+import ValidationSchema from './validation-schema.js';
 
 class StringValidationSchema extends ValidationSchema {
   required() {

@@ -1,6 +1,6 @@
 import arrayRequiredValidator from '../validators/array-required.js';
 import arraySizeofValidator from '../validators/array-sizeof.js';
-import { ValidationSchema } from './validation-schema.js';
+import ValidationSchema from './validation-schema.js';
 
 class ArrayValidationSchema extends ValidationSchema {
   required() {
