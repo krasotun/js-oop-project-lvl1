@@ -1,11 +1,8 @@
 const objectShapeValidator = (value, validators) => {
-  for (const key of Object.keys(value)) {
+  return Object.keys(value).every((key) => {
     const validator = validators[key];
-    if (!validator.isValid(value[key])) {
-      return false;
-    }
-  }
-  return true;
+    return validator ? validator.isValid(value[key]) : true;
+  });
 };
 
 export default objectShapeValidator;
