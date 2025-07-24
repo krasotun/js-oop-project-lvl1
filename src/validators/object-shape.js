@@ -1,11 +1,10 @@
 const objectShapeValidator = (value, validators) => {
-  Object.keys(value).forEach((key) => {
+  for (const key of Object.keys(value)) {
     const validator = validators[key];
     if (!validator.isValid(value[key])) {
       return false;
     }
-  });
-    
+  }
   return true;
 };
 
