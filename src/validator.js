@@ -41,9 +41,7 @@ class Validator {
 
   applyCommonValidators(type, schema) {
     const validators = this.commonValidators[type];
-    for (const [name, fn] of Object.entries(validators)) {
-      schema.addValidator(name, fn);
-    }
+    Object.entries(validators).forEach(([name, fn]) => schema.addValidator(name, fn));
   }
 }
 

@@ -1,1 +1,3 @@
-export const numberRequiredValidator = (value) => typeof value === "number";
+const numberRequiredValidator = (value) => typeof value === 'number';
+
+export default numberRequiredValidator;
