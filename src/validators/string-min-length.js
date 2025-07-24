@@ -1,3 +1,3 @@
- const stringMinLengthValidator = (value, minLength) => value.length >= minLength;
+const stringMinLengthValidator = (value, minLength) => value.length >= minLength;
 
- export default stringMinLengthValidator;
+export default stringMinLengthValidator;

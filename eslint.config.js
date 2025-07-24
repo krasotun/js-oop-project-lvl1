@@ -14,12 +14,14 @@ export default {
       },
     ],
     '@typescript-eslint/no-unused-vars': 'off',
-    'semi': ['error', 'always'],
+    semi: ['error', 'always'],
     'eol-last': ['error', 'always'],
-    'quotes': ['error', 'single'],
+    quotes: ['error', 'single'],
     'implicit-arrow-linebreak': ['error', 'beside'],
-    'import/prefer-default-export': ['error'],
+    'import/prefer-default-export': 'error',
+    indent: ['error', 2],
+    'no-confusing-arrow': 'error',
+    'arrow-parens': ['error', 'always'],
+    'no-multi-spaces': 'error',
   },
 };
-
-  
