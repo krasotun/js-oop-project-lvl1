@@ -23,6 +23,6 @@ export default {
     'no-confusing-arrow': 'error',
     'arrow-parens': ['error', 'always'],
     'no-multi-spaces': 'error',
-    'arrow-body-style': 'error'
+    'arrow-body-style': 'error',
   },
 };
